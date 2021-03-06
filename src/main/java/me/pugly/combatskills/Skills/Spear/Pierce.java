@@ -21,5 +21,6 @@ public class Pierce extends Skill {
     @Override
     public void trigger(Player player) {
         player.sendMessage("Pierce");
+        // This'll fix it
     }
 }
