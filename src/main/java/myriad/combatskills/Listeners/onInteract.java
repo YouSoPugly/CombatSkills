@@ -1,7 +1,7 @@
-package me.pugly.combatskills.Listeners;
+package myriad.combatskills.Listeners;
 
-import me.pugly.combatskills.Inputs.Input;
-import me.pugly.combatskills.PlayerHandler;
+import myriad.combatskills.Inputs.Input;
+import myriad.combatskills.PlayerHandler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;

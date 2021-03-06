@@ -1,4 +1,4 @@
-package me.pugly.combatskills.Skills;
+package myriad.combatskills.Skills;
 
 import java.util.ArrayList;
 import java.util.HashMap;

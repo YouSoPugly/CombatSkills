@@ -1,13 +1,12 @@
-package me.pugly.combatskills.Skills.Spear;
+package myriad.combatskills.Skills.Spear;
 
-import me.pugly.combatskills.Inputs.Input;
-import me.pugly.combatskills.Skills.Skill;
-import me.pugly.combatskills.Skills.WeaponType;
+import myriad.combatskills.Inputs.Input;
+import myriad.combatskills.Skills.Skill;
+import myriad.combatskills.Skills.WeaponType;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class Pierce extends Skill {
 

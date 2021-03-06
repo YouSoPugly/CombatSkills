@@ -1,4 +1,4 @@
-package me.pugly.combatskills.Skills;
+package myriad.combatskills.Skills;
 
 
 /// TEMPORARY UNTIL THE ITEMS PLUGIN HAS THIS

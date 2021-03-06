@@ -1,15 +1,15 @@
-package me.pugly.combatskills;
+package myriad.combatskills;
 
-import me.pugly.combatskills.Listeners.onCrouch;
-import me.pugly.combatskills.Listeners.onInteract;
-import me.pugly.combatskills.Listeners.onOffhand;
-import me.pugly.combatskills.Skills.Axe.Smash;
-import me.pugly.combatskills.Skills.Axe.Spin;
-import me.pugly.combatskills.Skills.LongSword.Slash;
-import me.pugly.combatskills.Skills.ShortSword.Dodge;
-import me.pugly.combatskills.Skills.ShortSword.HighJump;
-import me.pugly.combatskills.Skills.ShortSword.Leap;
-import me.pugly.combatskills.Skills.Spear.Pierce;
+import myriad.combatskills.Listeners.onCrouch;
+import myriad.combatskills.Listeners.onInteract;
+import myriad.combatskills.Listeners.onOffhand;
+import myriad.combatskills.Skills.Axe.Smash;
+import myriad.combatskills.Skills.Axe.Spin;
+import myriad.combatskills.Skills.LongSword.Slash;
+import myriad.combatskills.Skills.ShortSword.Dodge;
+import myriad.combatskills.Skills.ShortSword.HighJump;
+import myriad.combatskills.Skills.ShortSword.Leap;
+import myriad.combatskills.Skills.Spear.Pierce;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -40,8 +40,8 @@ public final class CombatSkills extends JavaPlugin {
 
     private void registerSkills() {
         // Axe Skills
-        new Smash();
         new Spin();
+        new Smash();
 
         // Longsword Skills
         new Slash();

@@ -1,8 +1,8 @@
-package me.pugly.combatskills.Skills.Axe;
+package myriad.combatskills.Skills.Axe;
 
-import me.pugly.combatskills.Inputs.Input;
-import me.pugly.combatskills.Skills.Skill;
-import me.pugly.combatskills.Skills.WeaponType;
+import myriad.combatskills.Inputs.Input;
+import myriad.combatskills.Skills.Skill;
+import myriad.combatskills.Skills.WeaponType;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;

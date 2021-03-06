@@ -1,8 +1,9 @@
-package me.pugly.combatskills.Skills.Axe;
+package myriad.combatskills.Skills.Axe;
 
-import me.pugly.combatskills.Inputs.Input;
-import me.pugly.combatskills.Skills.Skill;
-import me.pugly.combatskills.Skills.WeaponType;
+import myriad.combatskills.Inputs.Input;
+import myriad.combatskills.Skills.Skill;
+import myriad.combatskills.Skills.WeaponType;
+import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -19,5 +20,7 @@ public class Spin extends Skill {
     @Override
     public void trigger(Player player) {
         player.sendMessage("Spin");
+        player.getWorld().spawnParticle(Particle.FLAME, player.getEyeLocation(), 1);
+        player.sendMessage("Dang man thats kinda cool though");
     }
 }

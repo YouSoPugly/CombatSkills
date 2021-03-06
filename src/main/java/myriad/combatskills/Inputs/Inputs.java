@@ -1,4 +1,4 @@
-package me.pugly.combatskills.Inputs;
+package myriad.combatskills.Inputs;
 
 import java.util.LinkedList;
 import java.util.Queue;

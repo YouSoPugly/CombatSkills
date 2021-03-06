@@ -1,4 +1,4 @@
-package me.pugly.combatskills.Inputs;
+package myriad.combatskills.Inputs;
 
 public enum Input {
     RCLICK,

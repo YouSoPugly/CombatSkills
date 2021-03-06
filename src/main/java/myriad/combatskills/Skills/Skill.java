@@ -1,6 +1,6 @@
-package me.pugly.combatskills.Skills;
+package myriad.combatskills.Skills;
 
-import me.pugly.combatskills.Inputs.Input;
+import myriad.combatskills.Inputs.Input;
 import org.bukkit.entity.Player;
 
 import java.util.LinkedList;

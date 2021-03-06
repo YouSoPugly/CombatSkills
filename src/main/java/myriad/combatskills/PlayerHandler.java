@@ -1,10 +1,10 @@
-package me.pugly.combatskills;
+package myriad.combatskills;
 
-import me.pugly.combatskills.Inputs.Input;
-import me.pugly.combatskills.Inputs.Inputs;
-import me.pugly.combatskills.Skills.Skill;
-import me.pugly.combatskills.Skills.SkillHandler;
-import me.pugly.combatskills.Skills.WeaponType;
+import myriad.combatskills.Inputs.Input;
+import myriad.combatskills.Inputs.Inputs;
+import myriad.combatskills.Skills.Skill;
+import myriad.combatskills.Skills.SkillHandler;
+import myriad.combatskills.Skills.WeaponType;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
