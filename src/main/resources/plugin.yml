@@ -1,0 +1,4 @@
+name: CombatSkills
+version: ${project.version}
+main: me.pugly.combatskills.CombatSkills
+api-version: 1.16
