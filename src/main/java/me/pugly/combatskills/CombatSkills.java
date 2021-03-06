@@ -44,7 +44,7 @@ public final class CombatSkills extends JavaPlugin {
         new Smash();
 
 
-        // Longsword Skills
+        // Longsword Skills //TODO: Rename
         new Slash();
 
         // Spear Skills
