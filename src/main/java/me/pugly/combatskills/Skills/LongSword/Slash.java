@@ -20,6 +20,7 @@ public class Slash extends Skill {
     @Override
     public void trigger(Player player) {
         player.sendMessage("Slash");
+        //do something
     }
 
 }

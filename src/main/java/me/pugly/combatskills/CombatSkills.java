@@ -40,8 +40,9 @@ public final class CombatSkills extends JavaPlugin {
 
     private void registerSkills() {
         // Axe Skills
-        new Smash();
         new Spin();
+        new Smash();
+
 
         // Longsword Skills
         new Slash();
