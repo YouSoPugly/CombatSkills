@@ -1,5 +1,6 @@
 package myriad.combatskills;
 
+import myriad.combatskills.Events.CombatSkillEvent;
 import myriad.combatskills.Inputs.Input;
 import myriad.combatskills.Inputs.Inputs;
 import myriad.combatskills.Skills.Skill;
@@ -7,6 +8,7 @@ import myriad.combatskills.Skills.SkillHandler;
 import myriad.combatskills.Skills.WeaponType;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -36,34 +38,28 @@ public class PlayerHandler {
         return inputMap.containsKey(p);
     }
 
+    public static void checkSkill(Player p, Inputs inputs, Skill skill) {
+        if (inputMap.get(p).isMatch(skill.getInputs())) {
+            CombatSkillEvent e = new CombatSkillEvent(p, skill);
+            Bukkit.getPluginManager().callEvent(e);
+            if (!e.isCancelled())
+                skill.trigger(p);
+            unregisterPlayer(p);
+        }
+    }
+
     public static void checkPlayer(Player p) {
         for (Skill s : SkillHandler.getSkills(WeaponType.AXE)) {
-            if (inputMap.get(p).isMatch(s.getInputs())) {
-                s.trigger(p);
-                unregisterPlayer(p);
-                return;
-            }
+            checkSkill(p, inputMap.get(p), s);
         }
         for (Skill s : SkillHandler.getSkills(WeaponType.SHORTSWORD)) {
-            if (inputMap.get(p).isMatch(s.getInputs())) {
-                s.trigger(p);
-                unregisterPlayer(p);
-                return;
-            }
+            checkSkill(p, inputMap.get(p), s);
         }
         for (Skill s : SkillHandler.getSkills(WeaponType.LONGSWORD)) {
-            if (inputMap.get(p).isMatch(s.getInputs())) {
-                s.trigger(p);
-                unregisterPlayer(p);
-                return;
-            }
+            checkSkill(p, inputMap.get(p), s);
         }
         for (Skill s : SkillHandler.getSkills(WeaponType.SPEAR)) {
-            if (inputMap.get(p).isMatch(s.getInputs())) {
-                s.trigger(p);
-                unregisterPlayer(p);
-                return;
-            }
+            checkSkill(p, inputMap.get(p), s);
         }
         if (inputMap.get(p).size() > 9)
             unregisterPlayer(p);
