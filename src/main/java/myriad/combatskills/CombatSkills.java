@@ -20,6 +20,7 @@ public final class CombatSkills extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        // test comment
         plugin = this;
 
         Bukkit.getPluginManager().registerEvents(new onCrouch(), this);
