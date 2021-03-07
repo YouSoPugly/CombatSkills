@@ -31,4 +31,8 @@ public class Dodge extends Skill {
             player.setVelocity(player.getVelocity().add(move.multiply(0.7)).setY(0.3));
         }, 1L);
     }
+
+    public String getName() {
+        return "Dodge";
+    }
 }

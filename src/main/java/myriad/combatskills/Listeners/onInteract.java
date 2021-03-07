@@ -5,6 +5,7 @@ import myriad.combatskills.PlayerHandler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 public class onInteract implements Listener {
 
@@ -18,7 +19,8 @@ public class onInteract implements Listener {
                 break;
             case RIGHT_CLICK_AIR:
             case RIGHT_CLICK_BLOCK:
-                PlayerHandler.addInput(e.getPlayer(), Input.RCLICK);
+                if (e.getHand().equals(EquipmentSlot.HAND))
+                    PlayerHandler.addInput(e.getPlayer(), Input.RCLICK);
                 break;
         }
 

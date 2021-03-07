@@ -22,4 +22,8 @@ public class Slash extends Skill {
         //do something
     }
 
+    public String getName() {
+        return "Slash";
+    }
+
 }

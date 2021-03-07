@@ -2,3 +2,8 @@ name: CombatSkills
 version: ${project.version}
 main: myriad.combatskills.CombatSkills
 api-version: 1.16
+depend: [Core]
+commands:
+  skills:
+    usage: /<command> <args>
+    description: "Skills command."

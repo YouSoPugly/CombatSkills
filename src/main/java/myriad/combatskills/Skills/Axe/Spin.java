@@ -23,4 +23,8 @@ public class Spin extends Skill {
         player.getWorld().spawnParticle(Particle.FLAME, player.getEyeLocation(), 1);
         player.sendMessage("Dang man thats kinda cool though");
     }
+
+    public String getName() {
+        return "Spin";
+    }
 }

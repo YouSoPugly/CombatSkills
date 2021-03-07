@@ -35,13 +35,13 @@ public class Inputs {
         for (Input i : inputs) {
             switch (i) {
                 case RCLICK:
-                    out.append("r ");
+                    out.append("R ");
                     break;
                 case LCLICK:
-                    out.append("l ");
+                    out.append("L ");
                     break;
                 case CROUCH:
-                    out.append("c ");
+                    out.append("C ");
             }
         }
         return out.toString();

@@ -20,4 +20,8 @@ public class Smash extends Skill {
     public void trigger(Player player) {
         player.sendMessage("Smash");
     }
+
+    public String getName() {
+        return "Smash";
+    }
 }

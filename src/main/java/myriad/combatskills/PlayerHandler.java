@@ -20,46 +20,58 @@ public class PlayerHandler {
 
     public static void registerPlayer(Player p) {
         inputMap.put(p, new Inputs());
+        p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("\u00a74『 \u00a7f" + " \u00a74』"));
     }
 
     public static void unregisterPlayer(Player p) {
-        p.sendMessage(inputMap.get(p).toString());
         inputMap.remove(p);
-        p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(""));
+    }
+
+    public static boolean isRegistered(Player p) {
+        return inputMap.containsKey(p);
     }
 
     public static boolean addInput(Player p, Input i) {
         if (inputMap.containsKey(p)) {
             inputMap.get(p).addInput(i);
-            p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(inputMap.get(p).toString()));
+            p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("\u00a74『\u00a7f" + inputMap.get(p).toString() + "\u00a74』"));
             checkPlayer(p);
         }
 
         return inputMap.containsKey(p);
     }
 
-    public static void checkSkill(Player p, Inputs inputs, Skill skill) {
+    public static boolean checkSkill(Player p, Inputs inputs, Skill skill) {
         if (inputMap.get(p).isMatch(skill.getInputs())) {
             CombatSkillEvent e = new CombatSkillEvent(p, skill);
             Bukkit.getPluginManager().callEvent(e);
-            if (!e.isCancelled())
+            if (!e.isCancelled()) {
                 skill.trigger(p);
+                p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("\u00a74『\u00a7f\u00a7o " + skill.getName() + " \u00a74』"));
+
+            }
             unregisterPlayer(p);
+            return true;
         }
+        return false;
     }
 
     public static void checkPlayer(Player p) {
         for (Skill s : SkillHandler.getSkills(WeaponType.AXE)) {
-            checkSkill(p, inputMap.get(p), s);
+            if (checkSkill(p, inputMap.get(p), s))
+                return;
         }
         for (Skill s : SkillHandler.getSkills(WeaponType.SHORTSWORD)) {
-            checkSkill(p, inputMap.get(p), s);
+            if (checkSkill(p, inputMap.get(p), s))
+                return;
         }
         for (Skill s : SkillHandler.getSkills(WeaponType.LONGSWORD)) {
-            checkSkill(p, inputMap.get(p), s);
+            if (checkSkill(p, inputMap.get(p), s))
+                return;
         }
         for (Skill s : SkillHandler.getSkills(WeaponType.SPEAR)) {
-            checkSkill(p, inputMap.get(p), s);
+            if (checkSkill(p, inputMap.get(p), s))
+                return;
         }
         if (inputMap.get(p).size() > 9)
             unregisterPlayer(p);

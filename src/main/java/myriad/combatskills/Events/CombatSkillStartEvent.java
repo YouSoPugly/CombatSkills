@@ -10,7 +10,7 @@ public class CombatSkillStartEvent extends Event implements Cancellable {
 
     private static final HandlerList HANDLERS = new HandlerList();
     private final Player player;
-    private boolean cancelled;
+    private boolean cancelled = false;
 
     public CombatSkillStartEvent(Player p) {
         player = p;
