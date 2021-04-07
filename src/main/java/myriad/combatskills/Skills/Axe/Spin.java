@@ -14,7 +14,7 @@ public class Spin extends Skill {
     public Spin() {
         super(new LinkedList<>(Arrays.asList(
                 Input.CROUCH, Input.RCLICK, Input.LCLICK, Input.CROUCH, Input.CROUCH, Input.LCLICK
-        )), WeaponType.AXE);
+        )), WeaponType.AXE, "Spin");
     }
 
     @Override

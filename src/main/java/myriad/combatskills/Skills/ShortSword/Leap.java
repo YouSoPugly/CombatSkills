@@ -16,7 +16,7 @@ public class Leap extends Skill {
     public Leap() {
         super(new LinkedList<>(Arrays.asList(
                 Input.LCLICK, Input.LCLICK, Input.LCLICK, Input.RCLICK, Input.CROUCH, Input.RCLICK
-        )), WeaponType.SHORTSWORD);
+        )), WeaponType.SHORTSWORD, "Leap");
     }
 
     @Override

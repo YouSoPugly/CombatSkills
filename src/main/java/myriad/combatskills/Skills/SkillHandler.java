@@ -3,15 +3,13 @@ package myriad.combatskills.Skills;
 import myriad.combatskills.Inputs.Input;
 import myriad.core.Utils.GUIUtils.GUIItem;
 import myriad.core.Utils.GUIUtils.GUIWindow;
+import myriad.core.Utils.TextUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static myriad.core.Utils.ItemUtils.createItem;
 
@@ -34,6 +32,58 @@ public class SkillHandler {
     public static void show(Player p) {
         if (window == null)
             window = getWindow();
+        window.show(p);
+    }
+
+    public static void showType(Player p, WeaponType type) {
+        GUIWindow window = new GUIWindow("\u00a78\u00a7lSkill Information", 3);
+        window.setOnClose((inventoryCloseEvent -> getWindow().unregister()));
+        GUIItem border = GUIItem.getBorder(Material.GRAY_STAINED_GLASS_PANE);
+
+
+        for (int i = 0; i < 27; i++) {
+            window.setItem(i, border);
+        }
+
+        window.setItem(18, getBackToMain());
+
+        int slot = 11;
+
+        for (Skill s : SkillHandler.getSkills(type)) {
+
+            ArrayList<String> lore = new ArrayList<>();
+
+            lore.add(ChatColor.DARK_GREEN + "╔ ———————— ╗");
+            lore.add(ChatColor.GREEN + "✜ " + s.getName() + ":");
+            StringBuilder string = new StringBuilder(ChatColor.GREEN + "✜ ");
+            for (Input i : s.getInputs()) {
+                switch (i) {
+                    case RCLICK:
+                        string.append("\u00a7f\u00a7lR\u00a7a➨");
+                        break;
+                    case LCLICK:
+                        string.append("\u00a7f\u00a7lL\u00a7a➨");
+                        break;
+                    case CROUCH:
+                        string.append("\u00a7f\u00a7lC\u00a7a➨");
+                        break;
+                }
+            }
+            lore.add(string.substring(0, string.length()-2));
+            lore.add(ChatColor.DARK_GREEN + "╚ ———————— ╝");
+            lore.add(ChatColor.WHITE + "╔ ———————— ╗");
+            lore.addAll(s.getDescription());
+            lore.add(ChatColor.WHITE + "╚ ———————— ╝");
+
+            window.setItem(slot, new GUIItem(
+                    createItem(Material.PAPER, 1, TextUtils.convertToTitle(TextUtils.colorize(s.getName())), lore.toArray(new String[0])),
+                    (e) -> {
+                        e.setCancelled(true);
+                    }
+            ));
+
+            slot += 2;
+        }
         window.show(p);
     }
 
@@ -113,7 +163,7 @@ public class SkillHandler {
 
         return new GUIItem(is, (e) -> {
             e.setCancelled(true);
-            //show((Player) e.getWhoClicked(), type);
+            showType((Player) e.getWhoClicked(), type);
         });
     }
 

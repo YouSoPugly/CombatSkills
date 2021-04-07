@@ -19,7 +19,7 @@ public class Dodge extends Skill {
     public Dodge() {
         super(new LinkedList<>(Arrays.asList(
                 Input.LCLICK, Input.CROUCH, Input.LCLICK
-        )), WeaponType.SHORTSWORD);
+        )), WeaponType.SHORTSWORD, "Dodge");
     }
 
     @Override

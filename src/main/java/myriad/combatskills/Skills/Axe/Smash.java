@@ -13,7 +13,7 @@ public class Smash extends Skill {
     public Smash() {
         super(new LinkedList<>(Arrays.asList(
                 Input.CROUCH, Input.LCLICK, Input.LCLICK, Input.CROUCH, Input.CROUCH, Input.LCLICK
-        )), WeaponType.AXE);
+        )), WeaponType.AXE, "Smash");
     }
 
     @Override

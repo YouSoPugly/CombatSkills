@@ -17,7 +17,7 @@ public class HighJump extends Skill {
     public HighJump() {
         super(new LinkedList<>(Arrays.asList(
                 Input.CROUCH, Input.CROUCH, Input.LCLICK, Input.RCLICK, Input.LCLICK, Input.RCLICK
-        )), WeaponType.SHORTSWORD);
+        )), WeaponType.SHORTSWORD, "Highjump");
     }
 
     @Override

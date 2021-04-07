@@ -22,7 +22,7 @@ public class Pierce extends Skill {
 
         super(new LinkedList<>(Arrays.asList(
                 Input.LCLICK, Input.RCLICK, Input.CROUCH, Input.LCLICK, Input.LCLICK, Input.RCLICK
-        )), WeaponType.SPEAR);
+        )), WeaponType.SPEAR, "Pierce");
     }
 
     @Override

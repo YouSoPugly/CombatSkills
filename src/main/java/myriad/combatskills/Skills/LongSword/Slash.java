@@ -13,7 +13,7 @@ public class Slash extends Skill {
     public Slash() {
         super(new LinkedList<>(Arrays.asList(
                 Input.RCLICK, Input.RCLICK, Input.CROUCH, Input.LCLICK, Input.LCLICK, Input.RCLICK
-        )), WeaponType.LONGSWORD);
+        )), WeaponType.LONGSWORD, "Slash");
     }
 
     @Override
